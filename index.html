@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        font-family: 'Times New Roman', Times, serif;
+    }
+</style>
+<body>
+    <div class="product">
+        <h2>product 1</h2>
+        <p>Description of product 1</p>
+        <button class="view-product"  data-id="1">View Product 1</button>
+    </div>
+    <div class="product" id="2">
+        <h2>product 2</h2>
+        <p>Description of product 2</p>
+        <button class="view-product"  data-id="2">View Product 2</button>
+    </div>
+
+    <script>
+        const viewProduct = document.querySelectorAll('.view-product');
+        viewProduct.forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = this.getAttribute('data-id');
+                window.location.href = `sproduct.html?id=${productId}`
+            })
+        })
+
+    </script>
+</body>
+</html>
